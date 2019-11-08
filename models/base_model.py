@@ -2,7 +2,7 @@
 """ This module create Class Base.
 The “base” of all other classes in this project
 See:
-    test_base_model.py file
+    test_base_model_dict.py file
 """
 
 from uuid import uuid4
@@ -21,9 +21,22 @@ class BaseModel:
             created_at: datetime - assign with the current datetime
             updated_at: datetime - assign with the current datetime
         """
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "__class__":
+                    continue
+                elif key == "created_at":
+                    setattr(self, key, datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f"))
+                elif key == "updated_at":
+                    setattr(self, key, datetime.strptime(
+                        value, "%Y-%m-%dT%H:%M:%S.%f"))
+                else:
+                    setattr(self, key, value)
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """
