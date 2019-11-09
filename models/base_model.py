@@ -2,11 +2,12 @@
 """ This module create Class Base.
 The “base” of all other classes in this project
 See:
-    test_base_model_dict.py file
+    test_save_reload_base_model.py file
 """
 
 from uuid import uuid4
 from datetime import datetime
+import models
 
 
 class BaseModel:
@@ -37,6 +38,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """
@@ -50,6 +52,7 @@ class BaseModel:
         Updates the attribute updated_at with the current datetime
         """
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """
