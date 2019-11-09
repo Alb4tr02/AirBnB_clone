@@ -72,6 +72,25 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print("** no instance found **")
 
+    def do_destroy(self, arg):
+        """
+        Deletes an instance based on the class name and id
+        """
+        argv = arg.split()
+        if len(argv) == 0:
+            print("** class name missing **")
+        elif argv[0] not in self.class_list:
+            print("** class doesn't exist **")
+        elif argv[0] in self.class_list and len(argv) == 1:
+            print("** instance id missing **")
+        else:
+            obj_attr = str(argv[0] + "." + argv[1])
+            if obj_attr in storage.all():
+                del (storage.all()[obj_attr])
+                storage.save()
+            else:
+                print("** no instance found **")
+
 if __name__ == '__main__':
     """
     Code not be executed when imported
