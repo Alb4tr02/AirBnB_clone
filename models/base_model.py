@@ -56,7 +56,7 @@ class BaseModel:
 
     def to_dict(self):
         """
-        Returns a new dictionary containing all keys/values of __dict__
+        Returns new dictionary containing all keys/values of __dict__
         """
         my_dict = self.__dict__.copy()
         my_dict['created_at'] = self.created_at.isoformat()
