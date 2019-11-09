@@ -8,6 +8,7 @@ import cmd
 from models.base_model import BaseModel
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """
     class HBNBCommand
@@ -90,6 +91,21 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
+
+    def do_all(self, arg):
+        """
+        Prints all string representation of all instances
+        based or not on the class name
+        """
+        argv = arg.split()
+        if argv[0] not in self.class_list:
+            print("** class doesn't exist **")
+        else:
+            obj_list = []
+            for obj_attr in storage.all():
+                key = storage.all()[obj_attr]
+                obj_list.append(str(key))
+            print(obj_list)
 
 if __name__ == '__main__':
     """
