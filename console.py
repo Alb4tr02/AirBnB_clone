@@ -149,6 +149,29 @@ class HBNBCommand(cmd.Cmd):
                 storage_update = storage.all()
                 storage_update[obj_attr].save()
 
+    def default(self, arg):
+        """
+        retrieve all instances of a class by using: <class name>.all()
+        """
+        argv = arg.split(".")
+        argv_2 = argv[1].split('"')
+        if argv[1] == "all()":
+            self.do_all(argv[0])
+        elif argv[1] == "count()":
+            obj_attr = str(argv[0])
+            count = 0
+            for key, value in storage.all().items():
+                if obj_attr in key:
+                    count += 1
+            print(count)
+        elif argv_2[0] == "show(":
+            self.do_show(argv[0] + " " + argv_2[1])
+        elif argv_2[0] == "destroy(":
+            self.do_destroy(argv[0] + " " + argv_2[1])
+        elif argv_2[0] == "update(":
+            self.do_update(argv[0] + " " + argv_2[1] + " " + argv_2[3] +
+                           " " + argv_2[5])
+
 if __name__ == '__main__':
     """
     Code not be executed when imported
