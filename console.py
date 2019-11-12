@@ -7,6 +7,7 @@ contains the entry point of the command interpreter
 import cmd
 import shlex
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
 
@@ -100,14 +101,23 @@ class HBNBCommand(cmd.Cmd):
         based or not on the class name
         """
         argv = arg.split()
-        if len(argv) >= 1 and argv[0] not in self.class_list:
-            print("** class doesn't exist **")
-        else:
+        if len(argv) == 0:
             obj_list = []
             for obj_attr in storage.all():
                 key = storage.all()[obj_attr]
                 obj_list.append(str(key))
             print(obj_list)
+        else:
+            obj_list = []
+            for obj_attr in storage.all():
+                key = storage.all()[obj_attr]
+                arg_class = obj_attr.split(".")
+                if arg_class[0] == argv[0]:
+                    obj_list.append(str(key))
+            if argv[0] in self.class_list:
+                print(obj_list)
+            else:
+                print("** class doesn't exist **")
 
     def do_update(self, arg):
         """
