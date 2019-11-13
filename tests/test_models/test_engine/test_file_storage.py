@@ -114,3 +114,6 @@ class TestFileStorage(unittest.TestCase):
         st.reload()
         with self.assertRaises(TypeError):
             st.reload("reload")
+
+if __name__ == '__main__':
+    unittest.main()
