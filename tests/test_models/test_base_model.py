@@ -48,10 +48,29 @@ class TestBaseModel(unittest.TestCase):
         """
         tests save
         """
+
         test_model = BaseModel()
         id = test_model.id
         ut = test_model.updated_at
         test_model.save()
         self.assertNotEqual(ut, test_model.updated_at)
 
-    
+    def test_str(self):
+        """
+        test str
+        """
+
+        test_model = BaseModel()
+        id = test_model.id
+        srt = test_model.__str__()
+        self.assertEqual(srt, "[BaseModel] ({}) {}".format(id, test_model.__dict__))
+
+    def test_to_dict(self):
+        """
+        test to_dict
+        """
+
+        test_model = BaseModel()
+        dit = test_model.to_dict()
+        up = test_model.updated_at.isoformat()
+        self.assertEqual(up, dit['updated_at'])
