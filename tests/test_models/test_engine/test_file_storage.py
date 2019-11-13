@@ -14,7 +14,7 @@ class TestFileStorage(unittest.TestCase):
     test for FileStorage
     """
 
-    def basic_test(self):
+    def test_basic(self):
         """
         Basica tests for FS Class
         """
