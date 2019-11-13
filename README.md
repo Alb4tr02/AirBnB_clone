@@ -14,5 +14,6 @@ This is the first step to build an AirBnB clone, to begin we are going to build 
  
 ### How to start it?
 We can start the console typing "./console.py" on the terminal
+
 `$ ./console.py`
 
