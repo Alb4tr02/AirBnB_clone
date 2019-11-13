@@ -21,3 +21,5 @@ We can start the console typing "./console.py" on the terminal
 
 ### How to use it?
 - In the interactive mode we need to type a command with it arguments if it needs and then press intro. See the example below
+
+<a href="https://ibb.co/RQ41dh4"><img src="https://i.ibb.co/MP5bQ85/c2.png" alt="c2" border="0"></a>
