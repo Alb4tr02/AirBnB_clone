@@ -25,3 +25,5 @@ We can start the console typing "./console.py" on the terminal
 <a href="https://ibb.co/RQ41dh4"><img src="https://i.ibb.co/MP5bQ85/c2.png" alt="c2" border="0"></a>
 
 - In non-interactive mode we can execute it as follow:
+
+`$ echo "<command and argumments>" | ./console.py`
