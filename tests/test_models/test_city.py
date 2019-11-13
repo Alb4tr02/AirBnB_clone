@@ -23,6 +23,13 @@ class TestCity(unittest.TestCase):
 
         self.assertIsNotNone(City.__doc__)
 
+    def test_attributes_type(self):
+        """
+        Test attributes type
+        """
+        self.assertTrue(type(self.new_instance.state_id) is str)
+        self.assertTrue(type(self.new_instance.name) is str)
+
     def test_attributes_city(self):
         """
         Test attributes of City class
@@ -30,6 +37,14 @@ class TestCity(unittest.TestCase):
 
         self.assertTrue(hasattr(self.new_instance, "state_id"))
         self.assertTrue(hasattr(self.new_instance, "name"))
+
+    def test_inheritance_BaseModel(self):
+        """
+        Test inheritance of city class
+        """
+
+        self.assertTrue(issubclass(City, BaseModel))
+        self.assertTrue(issubclass(type(self.new_instance), BaseModel))
 
 if __name__ == '__main__':
     unittest.main()

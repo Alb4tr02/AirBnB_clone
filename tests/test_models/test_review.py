@@ -23,6 +23,14 @@ class TestReview(unittest.TestCase):
 
         self.assertIsNotNone(Review.__doc__)
 
+    def test_attributes_type(self):
+        """
+        Test attributes type
+        """
+        self.assertTrue(type(self.new_instance.place_id) is str)
+        self.assertTrue(type(self.new_instance.user_id) is str)
+        self.assertTrue(type(self.new_instance.text) is str)
+
     def test_attributes_review(self):
         """
         Test attributes of state class
@@ -31,6 +39,14 @@ class TestReview(unittest.TestCase):
         self.assertTrue(hasattr(self.new_instance, "place_id"))
         self.assertTrue(hasattr(self.new_instance, "user_id"))
         self.assertTrue(hasattr(self.new_instance, "text"))
+
+    def test_inheritance_BaseModel(self):
+        """
+        Test inheritance of Review class
+        """
+
+        self.assertTrue(issubclass(Review, BaseModel))
+        self.assertTrue(issubclass(type(self.new_instance), BaseModel))
 
 if __name__ == '__main__':
     unittest.main()
