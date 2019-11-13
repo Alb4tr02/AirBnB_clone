@@ -41,7 +41,6 @@ class TestPlace(unittest.TestCase):
         for key in self.new_instance.amenity_ids:
             self.assertTrue(type(key) is str)
 
-
     def test_attributes_place(self):
         """
         Test attributes of place class

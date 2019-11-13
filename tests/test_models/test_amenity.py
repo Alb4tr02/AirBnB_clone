@@ -29,7 +29,6 @@ class TestAmenity(unittest.TestCase):
         """
         self.assertTrue(type(self.new_instance.name) is str)
 
-
     def test_attributes_amenity(self):
         """
         Test attributes of amenity class
