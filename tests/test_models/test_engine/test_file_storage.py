@@ -76,6 +76,15 @@ class TestFileStorage(unittest.TestCase):
 
         self.assertIsNotNone(FileStorage.reload.__doc__)
 
+    def test_FileStorage_all(self):
+        """
+        test new method
+        """
+
+        st = FileStorage()
+        with self.assertRaises(TypeError):
+            st.all("lol")
+
     def test_FileStorage_new(self):
         """
         test new method
@@ -91,9 +100,8 @@ class TestFileStorage(unittest.TestCase):
         """
 
         st = FileStorage()
-        st.save()
         with self.assertRaises(TypeError):
-            st.new()
+            st.save("save")
 
     def test_FileStorage_new(self):
         """
@@ -101,6 +109,5 @@ class TestFileStorage(unittest.TestCase):
         """
 
         st = FileStorage()
-        st.reload()
         with self.assertRaises(TypeError):
-            st.new()
+            st.reload("reload")
