@@ -63,7 +63,8 @@ class TestBaseModel(unittest.TestCase):
         test_model = BaseModel()
         id = test_model.id
         srt = test_model.__str__()
-        self.assertEqual(srt, "[BaseModel] ({}) {}".format(id, test_model.__dict__))
+        self.assertEqual(srt, "[BaseModel] ({}) {}".
+                         format(id, test_model.__dict__))
 
     def test_to_dict(self):
         """
@@ -74,3 +75,13 @@ class TestBaseModel(unittest.TestCase):
         dit = test_model.to_dict()
         up = test_model.updated_at.isoformat()
         self.assertEqual(up, dit['updated_at'])
+
+    def test_from_dict(self):
+        """
+        test constructor with dict
+        """
+
+        test_model = BaseModel()
+        dit = test_model.to_dict()
+        test_model2 = BaseModel(None, id=dit['id'])
+        self.assertEqual(test_model.id, test_model2.id)

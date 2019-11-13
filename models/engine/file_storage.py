@@ -16,6 +16,7 @@ from models.city import City
 from models.amenity import Amenity
 from models.review import Review
 
+
 class FileStorage:
     """
     File storage class
@@ -64,4 +65,7 @@ class FileStorage:
             with open(self.__file_path, 'r') as f:
                 json_file = json.loads(f.read())
                 for key in json_file:
-                    self.__objects[key] = self.class_dict[json_file[key]['__class__']](**(json_file[key]))
+                    a = '__class__'
+                    b = json_file[key]
+                    c = key
+                    self.__objects[c] = self.class_dict[json_file[c][a]](**(b))
