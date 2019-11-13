@@ -85,3 +85,6 @@ class TestBaseModel(unittest.TestCase):
         dit = test_model.to_dict()
         test_model2 = BaseModel(None, id=dit['id'])
         self.assertEqual(test_model.id, test_model2.id)
+
+if __name__ == '__main__':
+    unittest.main()
