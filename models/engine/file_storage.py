@@ -17,6 +17,7 @@ from models.amenity import Amenity
 from models.review import Review
 
 class FileStorage:
+
     """
     File storage class
     Args:
