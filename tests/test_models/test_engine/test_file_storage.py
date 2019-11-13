@@ -82,6 +82,7 @@ class TestFileStorage(unittest.TestCase):
         """
 
         st = FileStorage()
+        st.all()
         with self.assertRaises(TypeError):
             st.all("lol")
 
@@ -100,6 +101,7 @@ class TestFileStorage(unittest.TestCase):
         """
 
         st = FileStorage()
+        st.save()
         with self.assertRaises(TypeError):
             st.save("save")
 
@@ -109,5 +111,6 @@ class TestFileStorage(unittest.TestCase):
         """
 
         st = FileStorage()
+        st.reload()
         with self.assertRaises(TypeError):
             st.reload("reload")
