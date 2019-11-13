@@ -40,3 +40,38 @@ class TestFileStorage(unittest.TestCase):
         st = FileStorage()
         with self.assertRaises(AttributeError):
             st.__file_path
+
+    def test_doc_FileStorage(self):
+        """
+        test doc for class
+        """
+
+        self.assertIsNotNone(FileStorage.__doc__)
+
+    def test_doc_FileStorage_all(self):
+        """
+        test doc for all method
+        """
+
+        self.assertIsNotNone(FileStorage.all.__doc__)
+
+    def test_doc_FileStorage_new(self):
+        """
+        test doc for new method
+        """
+
+        self.assertIsNotNone(FileStorage.new.__doc__)
+
+    def test_doc_save(self):
+        """
+        test doc for save method
+        """
+
+        self.assertIsNotNone(FileStorage.save.__doc__)
+
+    def test_doc_reload(self):
+        """
+        test doc for reload method
+        """
+
+        self.assertIsNotNone(FileStorage.reload.__doc__)
