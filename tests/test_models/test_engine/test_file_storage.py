@@ -14,7 +14,7 @@ class TestFileStorage(unittest.TestCase):
     test for FileStorage
     """
 
-    def test_basic(self):
+    def test_class_dict(self):
         """
         Basica tests for FS Class
         """
@@ -22,3 +22,21 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         dit = storage.class_dict
         self.assertIsInstance(dit, dict)
+
+    def test_objects(self):
+        """
+        test private atribute
+        """
+
+        st = FileStorage()
+        with self.assertRaises(AttributeError):
+            st.__objects
+
+    def test_file_path(self):
+        """
+        test private atribute
+        """
+
+        st = FileStorage()
+        with self.assertRaises(AttributeError):
+            st.__file_path
