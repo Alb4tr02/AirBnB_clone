@@ -35,3 +35,25 @@ class TestBaseModel(unittest.TestCase):
         test_model.created_at = datetime(1996, 7, 27)
         self.assertEqual(datetime(1996, 7, 27), test_model.created_at)
         #self.assertEqual(time, test_model.updated_at)
+
+    def test_base_class(self):
+        """
+        tests intranet
+        """
+
+        test_model = BaseModel()
+        test_model.name = "Holberton"
+        test_model.my_number = 89
+        self.assertIsInstance(test_model, BaseModel)
+        self.assertEqual(test_model.name, "Holberton")
+        self.assertEqual(test_model.my_number, 89)
+
+    def test_save(self):
+        """
+        tests save
+        """
+        test_model = BaseModel()
+        id = test_model.id
+        ct = test_model.created_at
+        ut = test_model.updated_at
+    
