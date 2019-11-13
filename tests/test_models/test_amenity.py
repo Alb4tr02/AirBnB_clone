@@ -23,11 +23,26 @@ class TestAmenity(unittest.TestCase):
 
         self.assertIsNotNone(Amenity.__doc__)
 
+    def test_attributes_type(self):
+        """
+        Test attributes type
+        """
+        self.assertTrue(type(self.new_instance.name) is str)
+
+
     def test_attributes_amenity(self):
         """
         Test attributes of amenity class
         """
         self.assertTrue(hasattr(self.new_instance, "name"))
+
+    def test_inheritance_BaseModel(self):
+        """
+        Test inheritance of amenity class
+        """
+
+        self.assertTrue(issubclass(Amenity, BaseModel))
+        self.assertTrue(issubclass(type(self.new_instance), BaseModel))
 
 if __name__ == '__main__':
     unittest.main()
