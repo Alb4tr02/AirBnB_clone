@@ -17,3 +17,7 @@ We can start the console typing "./console.py" on the terminal
 
 `$ ./console.py`
 
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/x8Mjys8/c1.png" alt="c1" border="0"></a>
+
+### How to use it?
+- In the interactive mode we need to type a command with it arguments if it needs and then press intro. See the example below
