@@ -1,0 +1,15 @@
+footer{
+    background-color: #FFFFFF;
+    position: fixed;
+    bottom: 0;
+    line-height: 30px;
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #CCCCCC;
+}
+body{
+   min-height: 400px;
+   margin-bottom: 100px;
+   clear: both;
+}
