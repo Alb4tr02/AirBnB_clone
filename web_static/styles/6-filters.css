@@ -1,0 +1,70 @@
+.filters {
+    /*text-align:center;*/
+    color: #FFFFFF;
+    width: 100%;
+    height: 70px;
+    border: 1px solid  #DDDDDD;
+    border-radius: 4px;
+}
+button {
+    font-size: 18px;
+    background-color: #FF5A5F;
+    color: #FFFFFF;
+    height: 48px;
+    width: 20%;
+    border: none;
+    border-radius: 4px;
+    margin: 11px 770px;
+}
+button:hover {
+    opacity: 0.9;
+}
+.locations {
+    height: 100%;
+    width: 25%;
+    border-right: 1px solid #DDDDDD;
+    color: #000000;
+    padding: 0;
+    display: block;
+    float: left;
+    margin: -70px auto;
+}
+div.locations:hover .popover {
+    visibility: visible;
+}
+div.amenities:hover .popover {
+    visibility: visible;
+}
+.amenities {
+    height: 100%;
+    width: 25%;
+    color: #000000;
+    padding: 0;
+    display: block;
+    float: left;
+    margin: -70px 25%;
+}
+h3 {
+    font-weight: 600;
+    margin-left: 30px;;
+}
+h4 {
+    font-weight: 400;
+    font-size: 14px;
+    margin: -15px;
+    margin-left: 30px;
+}
+.popover {
+
+    visibility: hidden;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    margin: 32px auto;
+    padding: 22px;
+}
+.amenities > .popover > h3 {
+    margin-left: 15px;
+}
+ul > h2{
+    font-size: 16px;
+}
